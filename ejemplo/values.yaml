@@ -1,0 +1,12 @@
+labels:
+  practica: k8s
+  formacion: containers-kubernetes
+  app: django
+
+replicas: 1
+
+imagen: localhost:5000/django
+
+imagePullPolicy: Always
+
+host: django.local

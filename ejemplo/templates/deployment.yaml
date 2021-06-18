@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}
+  labels: {{ .Values.labels | toYaml | nindent 4 }}
+spec:
+  replicas: {{ .Values.replicas }}
+  selector:
+    matchLabels:
+      app: django
+      tier: frontend
+  template:
+    metadata:
+      labels:
+        app: django
+        tier: frontend
+    spec:
+      containers:
+      - name: django
+        image: {{ .Values.imagen }}
+        imagePullPolicy: {{ .Values.imagePullPolicy}}
+        env:
+        - name: ALLOWED_HOSTS
+          value: {{ .Values.host }} 
+        ports:
+        - containerPort: 8000
