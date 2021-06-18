@@ -10,3 +10,10 @@ imagen: localhost:5000/django
 imagePullPolicy: Always
 
 host: django.local
+
+redis:
+  fullnameOverride: mi-redis
+  auth:
+    enabled: false
+  replica:
+    replicaCount: 1

@@ -7,3 +7,8 @@ type: application
 version: 0.0.1
 
 appVersion: 1.16.0
+
+dependencies:
+  - name: redis
+    version: 14.6.0
+    repository: https://charts.bitnami.com/bitnami/
